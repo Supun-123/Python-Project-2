@@ -206,6 +206,7 @@ def draw_text(surface, text, size, x, y):
 def draw_shield_bar(surface, x, y, percentage):
     if percentage < 0:
         percentage = 0
+        
     BAR_LENGTH = 100
     BAR_HEIGHT = 10
     fill = (percentage / 100) * BAR_LENGTH
@@ -214,8 +215,13 @@ def draw_shield_bar(surface, x, y, percentage):
     pygame.draw.rect(surface, GREEN, fill_rect)
     pygame.draw.rect(surface, WHITE, outline_rect, 2)
 
+
+
+
+
 # Function to draw lives
 def draw_lives(surface, x, y, lives, img):
+    
     for i in range(lives):
         img_rect = img.get_rect()
         img_rect.x = x + 30 * i
