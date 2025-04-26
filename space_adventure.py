@@ -104,7 +104,7 @@ class Player(pygame.sprite.Sprite):
                 bullets.add(bullet1)
 
     def hide(self):
-        self.hidden = True
+        self.hidden = True   
         self.hide_timer = pygame.time.get_ticks()
         self.rect.center = (SCREEN_WIDTH / 2, SCREEN_HEIGHT + 200)
 
@@ -300,10 +300,12 @@ def main_game():
             enemies.add(new_enemy)
             if player.shield <= 0:
                 player.lives =player.lives-1
+
                 player.shield = 100
                 player.hide()
                 if player.lives == 0:
                     game_over = True
+                    running=False
         
         # Check player-powerup collisions
         hits = pygame.sprite.spritecollide(player, powerups, True)
